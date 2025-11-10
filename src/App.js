@@ -19,8 +19,8 @@ function App() {
   };
   const [form, setForm] = useState(details);
   const [errors, setErrors] = useState({});
-
-  const handleChange = (event) => {
+  const [success, setSuccess] = useState(false);
+  const handleChange = (event) => {   
     const { name, value } = event.target;
 
     if (errors?.[name]) {
@@ -79,12 +79,13 @@ function App() {
       return false;
     }
   };
-  const [success, setSuccess] = useState(false);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      setForm(details);
+      // setForm(details);
+      e.target.reset()
       setSuccess(true);
     }
   };
@@ -100,7 +101,7 @@ function App() {
             <input
               type="text"
               name="enterpriseName"
-              value={form.enterpriseName}
+              // value={form.enterpriseName}
               onChange={handleChange}
             />
             <span>Enterprise Name</span>
@@ -113,7 +114,7 @@ function App() {
             <input
               type="text"
               name="udyamNumber"
-              value={form.udyamNumber}
+              // value={form.udyamNumber}
               onChange={handleChange}
             />
             <span>Udyam Registration Number</span>
@@ -124,7 +125,7 @@ function App() {
 
           <div className="input-box">
             <select
-              value={form.enterpriseType}
+              // value={form.enterpriseType}
               name="enterpriseType"
               onChange={handleChange}
               defaultValue=""
@@ -143,7 +144,7 @@ function App() {
           <div className="input-box">
             <select
               name="businessType"
-              value={form.businessType}
+              // value={form.businessType}
               onChange={handleChange}
               defaultValue=""
             >
@@ -165,7 +166,7 @@ function App() {
             <input
               type="text"
               name="district"
-              value={form.district}
+              // value={form.district}
               onChange={handleChange}
             />
             <span>District</span>
@@ -178,7 +179,7 @@ function App() {
             <input
               type="text"
               name="taluka"
-              value={form.taluka}
+              // value={form.taluka}
               onChange={handleChange}
             />
             <span>Taluka</span>
@@ -186,7 +187,7 @@ function App() {
 
           <div className="input-box">
             <textarea
-              value={form.address}
+              // value={form.address}
               name="address"
               onChange={handleChange}
             ></textarea>
@@ -204,7 +205,7 @@ function App() {
             <input
               type="text"
               name="ownerName"
-              value={form.ownerName}
+              // value={form.ownerName}
               onChange={handleChange}
             />
             <span>Owner Name</span>
@@ -216,7 +217,7 @@ function App() {
           <div className="input-box">
             <input
               type="number"
-              value={form.mobileNumber}
+              // value={form.mobileNumber}
               name="mobileNumber"
               onChange={handleChange}
               mobileNumber
@@ -231,7 +232,7 @@ function App() {
             <input
               type="email"
               name="emailId"
-              value={form.emailId}
+              // value={form.emailId}
               onChange={handleChange}
             />
             <span>Email ID</span>
@@ -247,7 +248,7 @@ function App() {
             <input
               type="text"
               name="userName"
-              value={form.userName}
+              // value={form.userName}
               onChange={handleChange}
             />
             <span>Username</span>
@@ -259,7 +260,7 @@ function App() {
             <input
               type="password"
               name="password"
-              value={form.password}
+              // value={form.password}
               onChange={handleChange}
             />
             <span>Password</span>
@@ -272,7 +273,7 @@ function App() {
             <input
               type="password"
               name="confirmPassword"
-              value={form.confirmPassword}
+              // value={form.confirmPassword}
               onChange={handleChange}
             />
             <span>Confirm Password</span>
